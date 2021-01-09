@@ -16,7 +16,7 @@ const returnRandBase = () => {
   
 // Factory function 
 
-const pQequorFactory = (num, dnaArray) => {
+const pAequorFactory = (num, dnaArray) => {
     return {
         num,
         dnaArray,
@@ -35,4 +35,8 @@ const pQequorFactory = (num, dnaArray) => {
 };
   
   
-  
+  let first = pAequorFactory(33, mockUpStrand());
+
+  console.log(first);
+  first.mutate();
+  console.log(first.dnaArray);
