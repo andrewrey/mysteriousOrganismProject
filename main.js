@@ -14,10 +14,25 @@ const returnRandBase = () => {
   }
   
   
-  
-  
-  
-  
+// Factory function 
+
+const pQequorFactory = (num, dnaArray) => {
+    return {
+        num,
+        dnaArray,
+        mutate(){
+            let indexToMutate = Math.floor(Math.random() * this.dnaArray.length);
+            let characterAtThatIndex = this.dnaArray[indexToMutate];
+            let characterReplacement;
+            do{
+                characterReplacement = returnRandBase();
+            } while (characterReplacement === characterAtThatIndex);
+            this.dnaArray.splice(indexToMutate,1,characterReplacement);
+            return this.dnaArray;
+        },
+        
+    };
+};
   
   
   
