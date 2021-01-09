@@ -51,8 +51,11 @@ const pAequorFactory = (num, dnaArray=mockUpStrand()) => {
 };
   
   
- let first = pAequorFactory(1);
- let second = pAequorFactory(2);
 
- console.log(first);
- console.log(first.willLikelySurvive());
+
+ let pAequorArray = [];
+ for(let i = 0; i < 30; i++){
+    pAequorArray.push(pAequorFactory(i+1));
+ }
+
+ console.log(pAequorArray);
