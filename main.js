@@ -39,6 +39,14 @@ const pAequorFactory = (num, dnaArray=mockUpStrand()) => {
             let percentageSame = counter / this.dnaArray.length;
             return `Specimen #${this.num} and specimen #${pObject.num} have ${Math.round(percentageSame * 100)}% DNA in common.`; 
         }, 
+        willLikelySurvive(){
+            if(this.dnaArray.reduce((acc, curr) => acc + (curr === 'C' || curr ==='G'? 1: 0), 0) >= 9){
+                console.log(this.dnaArray.reduce((acc, curr) => acc + (curr === 'C' || curr ==='G'? 1: 0),0));
+                return true;
+            } else {
+                return false;
+            }
+        },
     };
 };
   
@@ -47,5 +55,4 @@ const pAequorFactory = (num, dnaArray=mockUpStrand()) => {
  let second = pAequorFactory(2);
 
  console.log(first);
- console.log(second);
- console.log(first.compare(second));
+ console.log(first.willLikelySurvive());
